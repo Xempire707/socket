@@ -1,30 +1,3 @@
-"""
-TCP Server — Multi-client (Exercise 2)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 3.0  (Exercise 2 — multi-client TCP server)
-
-Novità rispetto a Exercise 0:
-  - Il server non esce dopo il primo client: torna ad accept() in loop.
-  - MAX_CLIENTS limita il numero totale di connessioni accettate, dando
-    al server un modo pulito per fermarsi.
-  - THREADED = True/False seleziona la modalità:
-      False → sequenziale: gestisce un client alla volta
-      True  → parallelo:   ogni client viene gestito in un Thread separato;
-                            il thread principale torna subito ad accept().
-
-Perché MAX_CLIENTS e non server_running flag?
-  Un semplice flag booleano richiederebbe un meccanismo esterno (es. signal,
-  una connessione di controllo) per essere impostato. MAX_CLIENTS è
-  deterministico e sufficiente per un esempio didattico.
-
-Thread safety:
-  Nella modalità THREADED ogni Thread ha la propria conn (socket dedicata),
-  quindi non c'è stato condiviso tra thread → nessun lock necessario.
-"""
-
 import socket
 import threading
 
