@@ -1,20 +1,3 @@
-"""
-TCP Client — Ping Pong (educational example)
-Connects to the server and sends "PING" five times, printing each "PONG" reply.
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 2.0  (Exercise 0 — refactored)
-
-Key steps in a TCP client:
-    1. Create a socket (socket.socket)
-    2. Connect to the server (socket.connect)
-    3. Send and receive data (socket.sendall, socket.recv)
-    4. Close the connection (socket.close)
-Note: Run tcp_server.py in one terminal before running this client in another terminal.
-"""
-
 import socket
 import time
 
