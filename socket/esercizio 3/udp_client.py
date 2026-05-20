@@ -1,22 +1,3 @@
-"""
-UDP Client — Ping Pong con gestione robusta del timeout (Exercise 3)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 3.0  (Exercise 3 — unreliable channel simulation)
-
-Modifica rispetto a Exercise 0:
-  - Il messaggio di timeout è esplicitamente significativo:
-    "[Client] Ping #N lost (server simulated drop or unreachable)"
-    in modo da chiarire perché nessuna risposta è arrivata.
-  - Il client NON crasha sul timeout: il loop continua al ping successivo.
-    Questo era già garantito dal try/except di Ex.0, ma ora il messaggio
-    rende evidente che il comportamento è intenzionale.
-  - Un contatore locale (received/lost) viene stampato al termine per
-    mostrare le statistiche della sessione.
-"""
-
 import socket
 import time
 
