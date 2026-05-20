@@ -1,22 +1,3 @@
-"""
-TCP Server — Ping Pong (educational example)
-Waits for a client to connect, then replies "PONG" to every "PING" received.
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 2.0  (Exercise 0 — refactored)
-
-Key steps in a TCP server:
-    1. Create a socket (socket.socket)
-    2. Bind to address/port (socket.bind)
-    3. Listen for incoming connections (socket.listen)
-    4. Accept a client (socket.accept)
-    5. Send and receive data (socket.sendall, socket.recv)
-    6. Close the connection (socket.close)
-Note: Run tcp_server.py in one terminal before running tcp_client.py in another terminal.
-"""
-
 import socket
 
 HOST = "127.0.0.1"  # loopback — accetta solo connessioni locali
