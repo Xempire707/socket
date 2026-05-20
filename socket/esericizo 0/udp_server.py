@@ -1,19 +1,3 @@
-"""
-UDP Server — Ping Pong (educational example)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 2.0  (Exercise 0 — refactored)
-
-Key differences from TCP:
-  - SOCK_DGRAM instead of SOCK_STREAM  →  UDP, connectionless
-  - No listen() or accept()           →  no connection is ever "established"
-  - recvfrom() instead of recv()      →  returns the sender's address with each datagram
-  - sendto()   instead of sendall()   →  we must specify the destination every time
-  - No close() on a per-client basis  →  there is no per-client socket to close
-"""
-
 import socket
 
 HOST = "127.0.0.1"  # loopback — accetta datagrammi solo da questa macchina
