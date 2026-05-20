@@ -1,19 +1,3 @@
-"""
-UDP Client — Ping Pong (educational example)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 2.0  (Exercise 0 — refactored)
-
-Key differences from TCP:
-  - SOCK_DGRAM instead of SOCK_STREAM  →  UDP, connectionless
-  - No connect()                        →  we never "establish" a connection
-  - sendto()   instead of sendall()    →  destination address supplied per datagram
-  - recvfrom() instead of recv()       →  also returns the sender's address
-  - No close() is strictly required    →  but we call it anyway to release the file descriptor
-"""
-
 import socket
 import time
 
