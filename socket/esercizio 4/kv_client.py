@@ -1,37 +1,3 @@
-"""
-Key-Value Store — Client (Exercise 4)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 1.0  (Exercise 4 — custom messages exchange)
-
-==============================================================================
-DESIGN DOCUMENT (risposta alle domande dell'esercizio)
-==============================================================================
-
-Protocollo scelto: TCP
-Motivazione: vedi ex4_kv_server.py (identica per entrambi i lati).
-
-Formato dei messaggi: testo piano, un comando per riga.
-  Client invia:  SET key value | GET key | DEL key | KEYS | QUIT
-  Server risponde: OK | VALUE val | NONE | KEYS k1 k2 | ERROR msg | BYE
-
-Gestione messaggi malformati:
-  Il client invia qualunque cosa l'utente digiti. Il server risponde
-  ERROR <motivo> senza chiudere la connessione; il client lo stampa
-  e continua il loop interattivo.
-
-Condizione di terminazione:
-  L'utente digita QUIT → il client invia QUIT → il server risponde BYE
-  → il client chiude la socket. In alternativa Ctrl+C interrompe il loop.
-
-Nota: questo client è interattivo (legge da stdin), quindi non ha un
-loop automatico come i client ping/pong. Permette di esplorare il
-protocollo manualmente, il che è più utile didatticamente per un KV store.
-==============================================================================
-"""
-
 import socket
 
 HOST = "127.0.0.1"
