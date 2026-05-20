@@ -1,26 +1,3 @@
-"""
-UDP Server — Canale inaffidabile simulato (Exercise 3)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 3.0  (Exercise 3 — unreliable channel simulation)
-
-Novità rispetto a Exercise 0:
-  - DROP_PROBABILITY: costante tra 0.0 e 1.0. Con 0.3 il 30% dei PONG
-    viene "perso" (non inviato).
-  - Prima di inviare ogni risposta, random.random() estrae un numero
-    casuale; se è < DROP_PROBABILITY il sendto() viene saltato e viene
-    stampato un messaggio di log.
-  - Questo rende essenziale il timeout nel client (già presente da Ex.0):
-    senza timeout, recvfrom() bloccherebbe per sempre sui pacchetti droppati.
-
-Osservazione didattica:
-  Su localhost i pacchetti non si perdono mai davvero. Questo drop
-  simulato lato server permette di osservare il comportamento del client
-  (timeout, stampa del messaggio, continuazione) senza infrastruttura reale.
-"""
-
 import socket
 import random
 
