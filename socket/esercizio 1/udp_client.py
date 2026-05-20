@@ -1,18 +1,3 @@
-"""
-UDP Client — Ping Pong con contatore visibile (Exercise 1)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 3.0  (Exercise 1 — message counter)
-
-Modifica rispetto a Exercise 0:
-  - Il client stampa la risposta completa del server (es. "PONG #3")
-    invece di assumerla sempre uguale a "PONG".
-  - Nessuna modifica alla logica di rete: il cambiamento è puramente
-    nel layer di presentazione (il print in send_ping).
-"""
-
 import socket
 import time
 
