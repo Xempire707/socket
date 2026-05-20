@@ -1,29 +1,3 @@
-"""
-UDP Server — Ping Pong con contatore messaggi (Exercise 1)
-
-Author  : Pietro Boccadoro
-Email   : pieroboccadoro13[at]gmail[dot]com
-Date    : 2024-04-11
-Version : 3.0  (Exercise 1 — message counter)
-
-Novità rispetto a Exercise 0:
-  - Il server mantiene un contatore globale dei PING ricevuti.
-  - Ogni risposta PONG include il contatore: es. "PONG #3".
-  - Il contatore è una variabile locale di serve_forever() inizializzata a 0:
-    scelta deliberata perché il suo scope è esattamente il ciclo di vita
-    del server. Se il server viene riavviato il contatore riparte da 0
-    (comportamento desiderabile: un nuovo processo è una nuova sessione).
-    Se il client si riconnette senza riavviare il server, il contatore
-    continua a salire — il client vedrà numeri non ricominciati da 1.
-
-Dove vive il contatore?
-  - È un intero locale in serve_forever(). Non è necessario renderlo
-    globale o un attributo di classe perché serve_forever() è l'unica
-    funzione che lo legge e lo modifica.
-  - Viene passato a receive_and_reply() che restituisce il contatore
-    aggiornato: approccio funzionale che evita side-effect nascosti.
-"""
-
 import socket
 
 HOST = "127.0.0.1"
